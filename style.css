@@ -1,0 +1,159 @@
+/* Zerando toda margin e padding e colocando border-box*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* variaveis*/
+:root {
+   --text-color: white;
+   --bg-url: url(assets/bg-mobile-dark\ \(1080x1920\).jpg);
+   --stroke-color: rgba(255, 255, 255, 0.5);
+   --surface-color: rgba(255, 255, 255, 0.05);
+   --surface-color-hover: rgba(0, 0, 0, 0.02);
+   --highlight-color: rgba(255, 255, 255, 0.2);
+}
+/* Variaveis modo light*/
+.light {
+   --text-color: black;
+   --bg-url: url(./assets/bg-mobile-light\ \(1080x1920\).jpg);
+   --stroke-color: rgba(0, 0, 0, 0.5);
+   --surface-color: rgba(0, 0, 0, 0.05);
+   --surface-color-hover: rgba(0, 0, 0, 0.02);
+   --highlight-color: rgba(0, 0, 0, 0.1);
+}
+/* Colocando imagem de fundo na pagina*/
+ body{
+    /*
+    background-image: url(./assets/bg-mobile-dark\ \(1080x1920\).jpg);
+    background-repeat: no-repeat;
+    background-position: top center;
+    background-size: /;
+    */
+    /*Backgroud color image repeat position/size*/
+    background: var(--bg-url) no-repeat top center/cover;
+ }
+/* Font e color da font*/
+ body * {
+    font-family: 'inter', sans-serif;
+    color: var(--text-color); 
+ }
+/* Alinhando todos os itens */
+ #container {
+    width: 360px;
+    margin: 56px auto auto auto;
+    padding: 0 24px;
+ }
+/* Alinhando e ageitando a foto de perfil na pagina*/
+ #profile {
+    text-align: center;
+    padding: 24px;
+ }
+/* Ageitando o tamanho da imagem */
+ #profile img{
+    width: 112px;
+ }
+/* Ageitando o texto*/
+ #profile {
+    font-weight: 500;
+    line-height: 24px;
+ }
+ /*switch*/
+#switch {
+   position: relative;
+   width: 64px;
+
+   margin: 4px auto;
+}
+ /*botão do switch*/      
+#switch button {
+   width: 32px;
+   height: 32px;
+   background: white url(./assets/bulb-2-svgrepo-com.svg) no-repeat center;
+   border: 0;
+   border-radius: 50%;
+   position: absolute;
+   top: 50%;
+   left: 0;
+   z-index: 1;
+   transform: translateY(-50%);
+}
+/*Trocando posicionamento*/
+.light #switch button {
+   right: 0;
+   left: initial;
+}
+/*track do switch*/
+#switch span {
+   display: block;
+   width: 64px;
+   height: 24px;
+
+   background: var(--surface-color);
+
+   border: 1px solid var(--stroke-color);
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+   border-radius: 9999px;
+}
+/* Ageitando a lista de links*/
+ ul {
+   list-style: none;
+
+   display: flex;
+   flex-direction: column;
+   gap: 16px;
+   
+   padding: 24px 0;
+ }
+/* Deixando a lista bonita a olhos dos users*/
+ ul li a {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   padding: 16px 24px;
+
+   background: var(--surface-color);
+   border: 1px solid var(--stroke-color);
+   border-radius: 10px;
+
+   backdrop-filter: blur(4px);
+   -webkit-backdrop-filter: blur(4px);
+
+   text-decoration: none;
+   font-weight: 500;
+
+   transition: background 0.8s;
+ }
+/*criando transição quando passa o cursor por cima dos itens*/
+ ul li a:hover {
+   background: var(--surface-color-hover);
+   border: 1.2px solid var(--text-color);
+ }
+/* Ajustando icones*/
+ #social-links {
+   display: flex;
+   justify-content: center;
+   gap: 6.5px;
+   padding: 24 0;
+   font-size: 24px;
+ }
+/* Alinhando social links*/
+ #social-links a {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   padding: 16px;
+   transition: background 0.33s;
+   border-radius: 50%;
+ }
+ /*Transição dos icones e ajuste do formato da borda*/
+ #social-links a:hover {
+   background: var(--highlight-color);
+ }
+ /* Rodapé*/
+footer {
+   padding: 24px 0;
+   text-align: center;
+}
