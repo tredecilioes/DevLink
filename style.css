@@ -10,7 +10,7 @@
    --bg-url: url(assets/bg-mobile-dark\ \(1080x1920\).jpg);
    --stroke-color: rgba(255, 255, 255, 0.5);
    --surface-color: rgba(255, 255, 255, 0.05);
-   --surface-color-hover: rgba(0, 0, 0, 0.02);
+   --surface-color-hover: rgba(255, 255, 255, 0.02);
    --highlight-color: rgba(255, 255, 255, 0.2);
 }
 /* Variaveis modo light*/
@@ -79,11 +79,14 @@
    left: 0;
    z-index: 1;
    transform: translateY(-50%);
+   animation: slide-back 0.6s;
 }
 /*Trocando posicionamento*/
 .light #switch button {
-   right: 0;
-   left: initial;
+   animation: slide-in 0.6s forwards;
+}
+#switch button:hover {
+   outline: 0.5rem solid var(--highlight-color);
 }
 /*track do switch*/
 #switch span {
@@ -159,7 +162,7 @@ footer {
    padding: 24px 0;
    text-align: center;
 }
-/*Media query*/
+/* Media query*/
 @media(min-weight) {
    /* variaveis*/
 :root {
@@ -169,4 +172,21 @@ footer {
 .light {
    --bg-url: url(./assets/bg-desktop-light\ \(1920x1080\).jpg);
 }
+}
+/* Animar do light pro dark e do dark pro light*/
+@keyframes slide-in {
+   from{
+      left: 0;
+   }
+   to {
+      left: 50%;
+   }
+}
+@keyframes slide-back {
+   from{
+      left: 50%;
+   }
+   to {
+      left: 0;
+   }
 }
