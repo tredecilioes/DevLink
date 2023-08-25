@@ -32,6 +32,7 @@
     */
     /*Backgroud color image repeat position/size*/
     background: var(--bg-url) no-repeat top center/cover;
+    height: 100vh;
  }
 /* Font e color da font*/
  body * {
@@ -157,4 +158,15 @@
 footer {
    padding: 24px 0;
    text-align: center;
+}
+/*Media query*/
+@media(min-weight) {
+   /* variaveis*/
+:root {
+   --bg-url: url(./assets/bg-desktop-dark\ \(1920x1080\).jpg);
+}
+/* Variaveis modo light*/
+.light {
+   --bg-url: url(./assets/bg-desktop-light\ \(1920x1080\).jpg);
+}
 }
